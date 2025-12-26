@@ -1,0 +1,189 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+}
+
+:root {
+}
+
+.dark {
+}
+
+@layer base {
+}
+
+* {
+  cursor: none; /* Hide default cursor */
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #000000;
+  color: #f8fafc;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #ff003c #000000;
+  cursor: none; /* Hide default cursor */
+}
+/* Ensure interactive elements also hide cursor */
+a,
+button,
+input,
+textarea,
+[role="button"] {
+  cursor: none !important;
+}
+h1,
+h2,
+h3,
+.font-heading {
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-style: italic;
+}
+.glow-red {
+  box-shadow: 0 0 20px rgba(255, 0, 60, 0.4);
+}
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #ff003c;
+}
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+.scanline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 0, 60, 0.1);
+  z-index: 100;
+  pointer-events: none;
+  animation: scanline 8s linear infinite;
+}
+.text-strike {
+  position: relative;
+  display: inline-block;
+}
+.text-strike::after {
+  content: "";
+  position: absolute;
+  bottom: 0.1em;
+  left: 0;
+  width: 100%;
+  height: 0.15em;
+  background: #ff003c;
+  z-index: -1;
+}
+
+/* --- Crazy Hover Effects --- */
+
+/* Glitch Animation */
+@keyframes glitch-anim {
+  0% {
+    clip: rect(42px, 9999px, 44px, 0);
+    transform: skew(0.5deg);
+  }
+  5% {
+    clip: rect(12px, 9999px, 59px, 0);
+    transform: skew(0.5deg);
+  }
+  10% {
+    clip: rect(48px, 9999px, 29px, 0);
+    transform: skew(0.5deg);
+  }
+  15% {
+    clip: rect(42px, 9999px, 73px, 0);
+    transform: skew(0.5deg);
+  }
+  20% {
+    clip: rect(63px, 9999px, 27px, 0);
+    transform: skew(0.5deg);
+  }
+  100% {
+    clip: rect(63px, 9999px, 27px, 0);
+    transform: skew(0.5deg);
+  }
+}
+
+.hover-glitch:hover {
+  animation: glitch-anim 0.2s infinite;
+  text-shadow: 2px 0 #ff003c, -2px 0 #00ffff;
+}
+
+/* 3D Perspective Tilt */
+.tilt-card {
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-style: preserve-3d;
+}
+.tilt-card:hover {
+  transform: perspective(1000px) rotateX(5deg) rotateY(-5deg)
+    scale3d(1.02, 1.02, 1.02);
+}
+
+/* Scanner Line for Images */
+.scanner-container {
+  position: relative;
+  overflow: hidden;
+}
+.scanner-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #ff003c;
+  box-shadow: 0 0 15px #ff003c;
+  z-index: 20;
+  opacity: 0;
+  pointer-events: none;
+}
+.scanner-container:hover .scanner-line {
+  opacity: 1;
+  animation: scan-vertical 1.5s linear infinite;
+}
+@keyframes scan-vertical {
+  0% {
+    top: 0%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+/* RGB Split Overlay */
+.rgb-split:hover::before,
+.rgb-split:hover::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.rgb-split:hover::before {
+  color: #ff003c;
+  left: -2px;
+  animation: glitch-anim 0.3s infinite;
+}
+.rgb-split:hover::after {
+  color: #00ffff;
+  left: 2px;
+  animation: glitch-anim 0.3s infinite reverse;
+}
