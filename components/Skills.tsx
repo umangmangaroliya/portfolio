@@ -1,8 +1,9 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 import {
   Code,
   Cpu,
   Database,
-  GitBranch,
+  Github,
   Link2,
   Palette,
   Server,
@@ -12,24 +13,24 @@ import React from "react";
 
 const Skills: React.FC = () => {
   const skills = [
-    { name: "MongoDB", level: 85, Icon: Database },
-    { name: "Express.js", level: 90, Icon: Server },
-    { name: "React.js", level: 95, Icon: Cpu },
-    { name: "Node.js", level: 88, Icon: Zap },
+    { name: "MongoDB", level: 25, Icon: Database },
+    { name: "Express.js", level: 40, Icon: Server },
+    { name: "React.js", level: 85, Icon: Cpu },
+    { name: "Node.js", level: 40, Icon: Zap },
     { name: "TypeScript", level: 80, Icon: Code },
-    { name: "Tailwind CSS", level: 92, Icon: Palette },
-    { name: "REST APIs", level: 94, Icon: Link2 },
-    { name: "Git & DevOps", level: 82, Icon: GitBranch },
+    { name: "Tailwind CSS", level: 95, Icon: Palette },
+    { name: "REST APIs", level: 95, Icon: Link2 },
+    { name: "Git & GitHub", level: 80, Icon: Github },
   ];
 
   return (
     <div className="container mx-auto px-4">
       <div className="mb-16">
         <div className="text-red-500 font-mono text-xs mb-4 tracking-[0.4em] uppercase">
-          // WEAPONRY
+          // SKILLS
         </div>
         <h2 className="text-5xl font-black italic tracking-tighter text-white">
-          TECH ARSENAL
+          TECH STACK
         </h2>
       </div>
 
@@ -39,7 +40,7 @@ const Skills: React.FC = () => {
             key={index}
             className="tilt-card p-6 bg-white/[0.03] border border-white/10 hover:border-red-600 hover:bg-red-600/5 transition-all group relative overflow-hidden cursor-pointer"
           >
-            {/* Holographic Overload Effect */}
+            {/* Hover Glow Effect */}
             <div className="absolute inset-0 bg-gradient-to-tr from-red-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
 
             <div className="flex items-center justify-between mb-8 relative z-10">
@@ -47,7 +48,7 @@ const Skills: React.FC = () => {
                 <skill.Icon size={32} />
               </div>
               <div className="text-xs font-mono text-white/20 group-hover:text-red-500">
-                UID_0{index + 1}
+                SKILL_0{index + 1}
               </div>
             </div>
 
@@ -67,7 +68,7 @@ const Skills: React.FC = () => {
               </span>
             </div>
 
-            {/* Matrix Decorative Dots */}
+            {/* Decorative Dots */}
             <div className="absolute bottom-2 right-2 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
               <div className="w-1 h-1 bg-red-600 animate-pulse"></div>
               <div className="w-1 h-1 bg-red-600 animate-pulse [animation-delay:0.2s]"></div>

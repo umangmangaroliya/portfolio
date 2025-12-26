@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 import React from "react";
 
 const About: React.FC = () => {
@@ -10,55 +11,54 @@ const About: React.FC = () => {
             <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-red-600"></div>
             <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-red-600"></div>
             <img
-              src="https://picsum.photos/800/800?grayscale"
+              src="/images/umang.jpg"
               alt="Umang"
-              className="w-full h-full object-cover filter contrast-125"
+              className="w-full h-full object-contain"
             />
           </div>
           <div className="absolute -bottom-6 -right-6 p-6 bg-red-600 text-black font-black italic skew-x-[-12deg]">
             <div className="text-3xl skew-x-[12deg]">03</div>
             <div className="text-[10px] uppercase tracking-tighter skew-x-[12deg]">
-              Years Active
+              Years Experience
             </div>
           </div>
         </div>
 
         <div className="w-full lg:w-1/2">
           <div className="text-red-500 font-mono text-xs mb-4 tracking-[0.4em] uppercase">
-            // CORE SPECS
+            // ABOUT ME
           </div>
           <h2 className="text-5xl md:text-6xl font-black italic mb-8 tracking-tighter text-white">
-            ARCHITECTING{" "}
+            BUILDING MODERN{" "}
             <span className="text-red-600 underline decoration-4 underline-offset-8">
-              DOMINANCE
+              EXPERIENCES
             </span>
             .
           </h2>
 
           <p className="text-white/60 text-lg leading-relaxed mb-6 font-medium">
-            Umang isn't just a developer; he's a technical architect
-            specializing in the modern web ecosystem. For 3 years, he has been
-            optimizing the digital landscape, turning abstract concepts into
-            high-performance web machinery.
+            I am a Full Stack Developer specializing in the MERN stack. For over
+            3 years, I have been focused on creating fast, scalable, and
+            responsive web applications that solve real-world problems.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-white/10 pt-8 mt-8">
             <div className="border-l-2 border-red-600 pl-4">
               <h4 className="text-white font-black italic text-sm mb-2 uppercase">
-                Philosophy
+                My Vision
               </h4>
               <p className="text-white/40 text-sm">
-                Code is a weapon. It should be sharp, efficient, and lethal in
-                its performance.
+                I believe in writing clean, maintainable code that prioritizes
+                user experience and performance.
               </p>
             </div>
             <div className="border-l-2 border-red-600 pl-4">
               <h4 className="text-white font-black italic text-sm mb-2 uppercase">
-                Mission
+                My Mission
               </h4>
               <p className="text-white/40 text-sm">
-                Eliminate latency. Maximize scalability. Redefine user
-                expectations.
+                To bridge the gap between complex backend systems and intuitive
+                frontend interfaces.
               </p>
             </div>
           </div>

@@ -17,6 +17,7 @@
 
 * {
   cursor: none; /* Hide default cursor */
+  scroll-behavior: smooth;
 }
 
 body {
@@ -26,6 +27,7 @@ body {
   overflow-x: hidden;
   scrollbar-width: thin;
   scrollbar-color: #ff003c #000000;
+  scroll-behavior: smooth;
   cursor: none; /* Hide default cursor */
 }
 /* Ensure interactive elements also hide cursor */

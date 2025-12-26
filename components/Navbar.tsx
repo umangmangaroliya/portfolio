@@ -9,11 +9,11 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: "CORE", href: "#home", id: "home" },
-    { name: "SPECS", href: "#about", id: "about" },
-    { name: "WEAPONRY", href: "#skills", id: "skills" },
-    // { name: "VAULT", href: "#projects", id: "projects" },
-    { name: "COMMS", href: "#contact", id: "contact" },
+    { name: "HOME", href: "#home", id: "home" },
+    { name: "ABOUT", href: "#about", id: "about" },
+    { name: "SKILLS", href: "#skills", id: "skills" },
+    // { name: "PROJECTS", href: "#projects", id: "projects" },
+    { name: "CONTACT", href: "#contact", id: "contact" },
   ];
 
   return (
@@ -22,12 +22,12 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
       <div className="hidden md:flex justify-between items-center px-8 py-2 border-b border-white/5 bg-white/5">
         <div className="flex items-center gap-4">
           <span className="text-[10px] font-bold text-red-500 tracking-[0.2em]">
-            SYSTEM OVERRIDE // ACTIVE
+            UMANG PORTFOLIO // ACTIVE
           </span>
           <div className="w-24 h-[1px] bg-red-500/30"></div>
         </div>
         <div className="flex items-center gap-6 text-[10px] font-mono text-white/40 uppercase tracking-widest">
-          <span>V4.0.1_STABLE</span>
+          <span>STABLE BUILD V4.0</span>
           <a href="#" className="hover:text-red-500 transition-colors">
             <Download size={12} strokeWidth={3} />
           </a>
