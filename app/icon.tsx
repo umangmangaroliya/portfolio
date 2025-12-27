@@ -6,7 +6,8 @@ export const size = {
   height: 32,
 };
 export const contentType = "image/png";
-
+export const dynamic = "force-static";
+export const revalidate = false;
 // Image generation
 export default function Icon() {
   return new ImageResponse(
