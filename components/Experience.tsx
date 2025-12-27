@@ -6,21 +6,27 @@ const Experience: React.FC = () => {
   const experiences = [
     {
       id: "LOG_01",
-      company: "TechFlow Systems",
-      role: "Senior Web Developer",
-      period: "2023 - PRESENT",
-      type: "Full-Time",
-      desc: "Leading front-end development for complex SaaS applications. Improved site performance by 40% through code optimization.",
-      stats: { linesOfCode: "250K+", deployments: "120+" },
+      company: "Vivansh Infotech",
+      role: "Frontend Developer Intern",
+      period: "2023 (6 Months)",
+      type: "Internship",
+      desc: "Completed a 6-month internship focusing on React, UI development, and building reusable components.",
+      stats: { duration: "6 Months", projects: "1+", componentsBuilt: "25+" },
     },
+
+    // ⭐ Your Full-Time Role
     {
-      id: "LOG_02",
-      company: "Innovation Labs",
-      role: "Full Stack Engineer",
-      period: "2021 - 2023",
+      id: "LOG_01",
+      company: "Vivansh Infotech",
+      role: "Frontend Developer",
+      period: "2023 - Present",
       type: "Full-Time",
-      desc: "Architected scalable dashboards and implemented reusable component libraries for multiple internal teams.",
-      stats: { componentsBuilt: "45", performanceScore: "98%" },
+      desc: "Working as a Frontend Developer building responsive web applications using React, Next.js, TypeScript, and Tailwind CSS.",
+      stats: {
+        projects: "10+",
+        performanceImprovement: "80%+",
+        componentsBuilt: "50+",
+      },
     },
   ];
 

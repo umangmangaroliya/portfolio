@@ -37,8 +37,8 @@ const About: React.FC = () => {
           </h2>
 
           <p className="text-white/60 text-lg leading-relaxed mb-6 font-medium">
-            I am a Full Stack Developer specializing in the MERN stack. For over
-            3 years, I have been focused on creating fast, scalable, and
+            I am a Web Developer specializing in the MERN stack. For over 3
+            years, I have been focused on creating fast, scalable, and
             responsive web applications that solve real-world problems.
           </p>
 

@@ -39,7 +39,12 @@ const Contact: React.FC = () => {
                 <Mail size={12} /> Contact Email
               </div>
               <div className="text-white font-black italic text-lg">
-                UMANG.DEV@GMAIL.COM
+                <a
+                  href="mailto:mangaroliyaumang21@gmail.com"
+                  className="uppercase"
+                >
+                  mangaroliyaumang21@gmail.com
+                </a>
               </div>
             </div>
 

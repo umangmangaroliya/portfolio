@@ -61,7 +61,8 @@ const Footer: React.FC = () => {
               </div>
               <div className="flex gap-4">
                 <a
-                  href="#"
+                  href="https://github.com/umangmangaroliya"
+                  target="_blank"
                   className="w-8 h-8 border border-white/10 flex items-center justify-center text-white/60 hover:bg-red-600 hover:text-black transition-all group"
                 >
                   <Github
@@ -70,7 +71,8 @@ const Footer: React.FC = () => {
                   />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/umangmangaroliya"
+                  target="_blank"
                   className="w-8 h-8 border border-white/10 flex items-center justify-center text-white/60 hover:bg-red-600 hover:text-black transition-all group"
                 >
                   <Linkedin
@@ -80,6 +82,7 @@ const Footer: React.FC = () => {
                 </a>
                 <a
                   href="#"
+                  target="_blank"
                   className="w-8 h-8 border border-white/10 flex items-center justify-center text-white/60 hover:bg-red-600 hover:text-black transition-all group"
                 >
                   <Twitter size={16} />
