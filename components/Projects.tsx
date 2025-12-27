@@ -5,31 +5,31 @@ import React from "react";
 const Projects: React.FC = () => {
   const projects = [
     {
-      id: "PRJ-771",
+      id: "PROJECT-01",
       title: "NexGen E-Commerce",
-      desc: "High-performance web marketplace with real-time inventory and Stripe integration.",
+      desc: "A modern online marketplace featuring real-time inventory management and secure Stripe payments.",
       tech: ["MongoDB", "Express", "React", "Node"],
       img: "https://picsum.photos/800/500?random=11",
-      status: "DEPLOYED",
-      coords: "40.7128° N, 74.0060° W",
+      status: "LIVE",
+      location: "E-Commerce",
     },
     {
-      id: "PRJ-402",
+      id: "PROJECT-02",
       title: "Crypto Pulse",
-      desc: "Real-time cryptocurrency tracking dashboard with predictive analysis visualizers.",
+      desc: "A real-time cryptocurrency dashboard with data visualization and market tracking.",
       tech: ["React", "D3.js", "WebSockets", "Tailwind"],
       img: "https://picsum.photos/800/500?random=22",
       status: "ACTIVE",
-      coords: "34.0522° N, 118.2437° W",
+      location: "FinTech",
     },
     {
-      id: "PRJ-109",
+      id: "PROJECT-03",
       title: "SecureFlow SaaS",
-      desc: "Project management tool for agile teams focusing on security and seamless UI.",
+      desc: "A team management application focused on security, organization, and efficient workflow.",
       tech: ["TypeScript", "Node", "PostgreSQL", "Redux"],
       img: "https://picsum.photos/800/500?random=33",
-      status: "SECURE",
-      coords: "51.5074° N, 0.1278° W",
+      status: "STABLE",
+      location: "SaaS Tool",
     },
   ];
 
@@ -38,20 +38,20 @@ const Projects: React.FC = () => {
       <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
         <div className="relative">
           <div className="text-red-500 font-mono text-[10px] mb-4 tracking-[0.5em] uppercase animate-pulse">
-            // STATUS: ACCESSING_VAULT_...
+            // LOADING LATEST PROJECTS...
           </div>
           <h2 className="text-6xl md:text-8xl font-black italic tracking-tighter text-white">
-            DEPLOYED <span className="text-red-600">ASSETS</span>
+            SELECTED <span className="text-red-600">WORK</span>
           </h2>
           <div className="absolute -left-4 top-0 w-1 h-full bg-red-600/20"></div>
         </div>
         <div className="hidden lg:block text-right">
           <div className="text-white/20 font-mono text-[9px] uppercase tracking-widest leading-relaxed">
-            SYSTEM_ID: UMANG_STABLE_V4
+            PORTFOLIO_ID: UMANG_DEV_V4
             <br />
-            ENCRYPTION: AES-256-GCM
+            STATUS: FULLY_OPERATIONAL
             <br />
-            TOTAL_LOAD: 87.4%
+            LOAD_INDEX: OPTIMAL
           </div>
         </div>
       </div>
@@ -62,14 +62,14 @@ const Projects: React.FC = () => {
             key={index}
             className="group relative flex flex-col lg:flex-row gap-0 lg:gap-12 items-stretch"
           >
-            {/* Project Index Number Background */}
+            {/* Project Index */}
             <div className="absolute -left-12 top-0 text-[12rem] font-black italic text-white/[0.03] select-none leading-none pointer-events-none z-0">
               0{index + 1}
             </div>
 
             {/* Image Module */}
             <div className="relative w-full lg:w-3/5 z-10 scanner-container border border-white/10 group-hover:border-red-600 transition-colors duration-500 bg-black">
-              {/* Module Header UI */}
+              {/* Header UI */}
               <div className="absolute top-0 left-0 w-full p-3 flex justify-between items-center bg-black/80 backdrop-blur-md border-b border-white/10 z-20">
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-red-600 animate-ping"></div>
@@ -78,11 +78,11 @@ const Projects: React.FC = () => {
                   </span>
                 </div>
                 <div className="text-[9px] font-mono text-white/30">
-                  {project.coords}
+                  {project.location}
                 </div>
               </div>
 
-              {/* Scanning Overlay */}
+              {/* Decorative Scanning Overlay */}
               <div className="scanner-line"></div>
 
               {/* Corner Brackets */}
@@ -96,13 +96,6 @@ const Projects: React.FC = () => {
                   alt={project.title}
                 />
               </div>
-
-              {/* Hover Metadata Overlay */}
-              <div className="absolute inset-0 bg-red-600/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none flex items-center justify-center">
-                <div className="text-red-500 font-mono text-[8px] tracking-[1em] animate-pulse">
-                  ANALYZING_SYSTEM_INTEGRITY...
-                </div>
-              </div>
             </div>
 
             {/* Content Module */}
@@ -110,7 +103,7 @@ const Projects: React.FC = () => {
               <div className="flex items-center gap-4 mb-6">
                 <div className="h-[1px] w-12 bg-red-600"></div>
                 <span className="text-red-500 font-mono text-[10px] tracking-widest uppercase">
-                  Specification_Link
+                  Project Details
                 </span>
               </div>
 
@@ -136,7 +129,7 @@ const Projects: React.FC = () => {
               <div className="flex items-center gap-8">
                 <button className="relative px-8 py-4 bg-red-600 text-black font-black italic uppercase tracking-widest text-xs hover:bg-white transition-all duration-300 group/btn overflow-hidden">
                   <span className="relative z-10 flex items-center gap-2">
-                    Execute <Bolt size={12} />
+                    Live Demo <Bolt size={12} />
                   </span>
                   <div className="absolute inset-0 bg-white translate-y-full group-hover/btn:translate-y-0 transition-transform"></div>
                 </button>
@@ -145,30 +138,21 @@ const Projects: React.FC = () => {
                   href="#"
                   className="text-[10px] font-mono text-white/20 hover:text-red-500 tracking-widest uppercase transition-colors flex items-center gap-2"
                 >
-                  <Github size={12} /> Source_Code
+                  <Github size={12} /> GitHub Link
                 </a>
-              </div>
-
-              {/* Fake System Logs */}
-              <div className="mt-12 hidden md:block">
-                <div className="font-mono text-[8px] text-white/10 space-y-1">
-                  <div>[LOG] INITIALIZING_ENVIRONMENT_V4.0</div>
-                  <div>[LOG] LOAD_BALANCER: ACTIVE</div>
-                  <div>[LOG] SECURITY_PROTOCOL: ARMORED</div>
-                </div>
               </div>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Vault Footer Section */}
+      {/* Vault Footer */}
       <div className="mt-40 pt-20 border-t border-white/10 text-center relative">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-8 bg-black">
           <ShieldCheck className="text-red-600" size={32} />
         </div>
         <button className="group relative text-3xl md:text-5xl font-black italic tracking-tighter text-white hover:text-red-600 transition-colors uppercase">
-          Expand_Full_Inventory
+          View All Projects
           <div className="h-1 w-0 group-hover:w-full bg-red-600 transition-all mx-auto mt-2"></div>
         </button>
       </div>
