@@ -95,8 +95,8 @@ const Skills: React.FC = () => {
             ))}
           </div>
           {/* Fades for smooth edges */}
-          <div className="absolute inset-y-0 left-0 w-40 bg-linear-to-r from-black to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute inset-y-0 right-0 w-40 bg-linear-to-l from-black to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute inset-y-0 left-0 w-10 md:w-40 bg-linear-to-r from-black to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute inset-y-0 right-0 w-10 md:w-40 bg-linear-to-l from-black to-transparent z-10 pointer-events-none"></div>
         </div>
 
         {/* Row 2: Moving Right */}
@@ -107,8 +107,8 @@ const Skills: React.FC = () => {
             ))}
           </div>
           {/* Fades for smooth edges */}
-          <div className="absolute inset-y-0 left-0 w-40 bg-linear-to-r from-black to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute inset-y-0 right-0 w-40 bg-linear-to-l from-black to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute inset-y-0 left-0 w-10 md:w-40 bg-linear-to-r from-black to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute inset-y-0 right-0 w-10 md:w-40 bg-linear-to-l from-black to-transparent z-10 pointer-events-none"></div>
         </div>
       </div>
 
