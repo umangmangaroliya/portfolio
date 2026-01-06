@@ -4,6 +4,7 @@ const CustomCursor: React.FC = () => {
   const [isHovering, setIsHovering] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   const ringRef = useRef<HTMLDivElement>(null);
   const dotRef = useRef<HTMLDivElement>(null);
@@ -12,6 +13,8 @@ const CustomCursor: React.FC = () => {
   const ringPosRef = useRef({ x: -100, y: -100 });
 
   useEffect(() => {
+    const touchQuery = window.matchMedia("(pointer: coarse)");
+    setIsTouchDevice(touchQuery.matches);
     const onMouseMove = (e: MouseEvent) => {
       mouseRef.current = { x: e.clientX, y: e.clientY };
       if (!isVisible) setIsVisible(true);
@@ -53,7 +56,7 @@ const CustomCursor: React.FC = () => {
 
       // DOT LOGIC
       if (dotRef.current) {
-        const dotScale = isClicking ? 1.2 : isHovering ? 1.4 : 1;
+        const dotScale = isClicking ? 0.8 : isHovering ? 1.4 : 1;
         // Dot is w-2 (8px), so offset is -4px to center it on coordinates
         // Using mouseRef directly for zero latency
         dotRef.current.style.transform = `translate3d(${
@@ -87,7 +90,7 @@ const CustomCursor: React.FC = () => {
     };
   }, [isHovering, isClicking, isVisible]);
 
-  if (!isVisible) return null;
+  if (isTouchDevice || !isVisible) return null;
 
   return (
     <div className="fixed inset-0 pointer-events-none z-[99999] overflow-hidden select-none">
@@ -138,7 +141,7 @@ const CustomCursor: React.FC = () => {
           isHovering || isClicking
             ? "bg-white shadow-[0_0_6px_#fff] ring-cyan-400"
             : "bg-red-600 shadow-[0_0_8px_#ff003c] ring-white/20"
-        } ${isClicking ? "!w-0.5 !h-0.5 left-[3px] top-[3px]" : ""}`}
+        } ${isClicking ? "!w-0.5 !h-0.5 left-[2.75px] top-[2.8px]" : ""}`}
         style={{ willChange: "transform", transformOrigin: "center center" }}
       />
 

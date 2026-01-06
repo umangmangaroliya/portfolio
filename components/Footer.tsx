@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
         }}
       ></div>
 
-      <div className="container mx-auto px-4 relative">
+      <div className="container mx-auto px-4 md:px-8 lg:px-8 relative">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12 mb-16">
           <div className="space-y-4">
             <div className="flex items-center gap-3">
@@ -111,7 +111,7 @@ const Footer: React.FC = () => {
 
           <div className="hidden md:flex items-center gap-2 text-[9px] font-mono text-red-500 font-bold uppercase tracking-tighter">
             <Cpu size={12} />
-            <span>Version: 4.0.0</span>
+            <span>Version: 1.0.0</span>
           </div>
         </div>
       </div>

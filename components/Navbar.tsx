@@ -27,8 +27,12 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
           <div className="w-24 h-[1px] bg-red-500/30"></div>
         </div>
         <div className="flex items-center gap-6 text-[10px] font-mono text-white/40 uppercase tracking-widest">
-          <span>STABLE BUILD V4.0</span>
-          <a href="#" className="hover:text-red-500 transition-colors">
+          <span>STABLE BUILD V1.0</span>
+          <a
+            href="/Umang_Resume.pdf"
+            download
+            className="hover:text-red-500 transition-colors"
+          >
             <Download size={12} strokeWidth={3} />
           </a>
         </div>

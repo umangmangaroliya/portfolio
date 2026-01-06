@@ -1,81 +1,127 @@
-/* eslint-disable react/jsx-no-comment-textnodes */
 import {
-  Code,
-  Cpu,
-  Database,
-  Github,
-  Link2,
-  Palette,
+  IconBrandDocker,
+  IconBrandGit,
+  IconBrandGithub,
+  IconBrandJavascript,
+  IconBrandMongodb,
+  IconBrandNextjs,
+  IconBrandNodejs,
+  IconBrandReact,
+  IconBrandTailwind,
+  IconBrandTypescript,
+} from "@tabler/icons-react";
+import {
+  Activity,
+  Binary,
+  FileTextIcon,
+  LucideIcon,
   Server,
-  Zap,
+  Share2,
+  ShieldCheck,
 } from "lucide-react";
 import React from "react";
 
+interface SkillItem {
+  name: string;
+  Icon: LucideIcon;
+}
+
 const Skills: React.FC = () => {
-  const skills = [
-    { name: "MongoDB", level: 25, Icon: Database },
-    { name: "Express.js", level: 40, Icon: Server },
-    { name: "React.js", level: 85, Icon: Cpu },
-    { name: "Node.js", level: 40, Icon: Zap },
-    { name: "TypeScript", level: 80, Icon: Code },
-    { name: "Tailwind CSS", level: 95, Icon: Palette },
-    { name: "REST APIs", level: 95, Icon: Link2 },
-    { name: "Git & GitHub", level: 80, Icon: Github },
+  const row1: SkillItem[] = [
+    { name: "MongoDB", Icon: IconBrandMongodb },
+    { name: "Express", Icon: Server },
+    { name: "React", Icon: IconBrandReact },
+    { name: "Node.js", Icon: IconBrandNodejs },
+    { name: "TypeScript", Icon: IconBrandTypescript },
+    { name: "Next.js", Icon: IconBrandNextjs },
+    // { name: "Redux", Icon: IconBrandRedux },
+    { name: "Javascript", Icon: IconBrandJavascript },
+    { name: "Zustand", Icon: Share2 },
   ];
 
+  const row2: SkillItem[] = [
+    { name: "Tailwind", Icon: IconBrandTailwind },
+    { name: "Git", Icon: IconBrandGit },
+    { name: "Docker", Icon: IconBrandDocker },
+    { name: "GitHub", Icon: IconBrandGithub },
+
+    { name: "Tanstack Query", Icon: Activity },
+    { name: "React Hook Form", Icon: FileTextIcon },
+    { name: "Yup", Icon: ShieldCheck },
+  ];
+
+  const SkillBox: React.FC<{ skill: SkillItem }> = ({ skill }) => (
+    <div className="group relative w-24 h-24 shrink-0 bg-white/2 border border-white/5 hover:border-red-600 transition-all duration-300 flex flex-col items-center justify-center p-2 mx-2">
+      {/* Hover Accent */}
+      <div className="absolute top-0 left-0 w-px h-0 bg-red-600 group-hover:h-full transition-all duration-300"></div>
+
+      {/* Icon */}
+      <div className="text-white/20 group-hover:text-red-600 transition-colors duration-300 group-hover:scale-110">
+        <skill.Icon size={24} strokeWidth={1.5} />
+      </div>
+
+      {/* Label */}
+      <div className="mt-2">
+        <span className="block text-center whitespace-normal text-[9px] font-black text-white/30 uppercase tracking-tighter group-hover:text-white transition-colors">
+          {skill.name}
+        </span>
+      </div>
+
+      {/* Tiny Status Dot */}
+      <div className="absolute top-1 right-1 w-0.5 h-0.5 bg-white/10 group-hover:bg-red-600 rounded-full"></div>
+    </div>
+  );
+
   return (
-    <div className="container mx-auto px-4">
-      <div className="mb-16">
-        <div className="text-red-500 font-mono text-xs mb-4 tracking-[0.4em] uppercase">
-          // SKILLS
+    <div className="mx-auto px-4 overflow-hidden">
+      {/* Minimalist Header */}
+      <div className="mb-12">
+        <div className="flex items-center gap-2 text-red-600 font-mono text-[10px] tracking-[0.4em] uppercase mb-2">
+          <Binary size={12} className="animate-pulse" />
+          <span>Operational Stack</span>
         </div>
-        <h2 className="text-5xl font-black italic tracking-tighter text-white">
-          TECH STACK
+        <h2 className="text-4xl md:text-6xl font-black italic tracking-tighter text-white uppercase leading-none">
+          TECH <span className="text-red-600">UNITS</span>
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {skills.map((skill, index) => (
-          <div
-            key={index}
-            className="tilt-card p-6 bg-white/[0.03] border border-white/10 hover:border-red-600 hover:bg-red-600/5 transition-all group relative overflow-hidden cursor-pointer"
-          >
-            {/* Hover Glow Effect */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-red-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
-
-            <div className="flex items-center justify-between mb-8 relative z-10">
-              <div className="text-red-600 group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300">
-                <skill.Icon size={32} />
-              </div>
-              <div className="text-xs font-mono text-white/20 group-hover:text-red-500">
-                SKILL_0{index + 1}
-              </div>
-            </div>
-
-            <h3 className="text-sm font-black italic text-white mb-4 uppercase tracking-widest relative z-10 group-hover:translate-x-2 transition-transform">
-              {skill.name}
-            </h3>
-
-            <div className="flex items-end gap-2 relative z-10">
-              <div className="flex-grow h-2 bg-white/5 overflow-hidden">
-                <div
-                  className="h-full bg-red-600 transition-all duration-1000 group-hover:bg-white group-hover:shadow-[0_0_15px_rgba(255,255,255,0.8)]"
-                  style={{ width: `${skill.level}%` }}
-                ></div>
-              </div>
-              <span className="text-[10px] font-mono text-red-600 group-hover:text-white font-bold">
-                {skill.level}%
-              </span>
-            </div>
-
-            {/* Decorative Dots */}
-            <div className="absolute bottom-2 right-2 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-              <div className="w-1 h-1 bg-red-600 animate-pulse"></div>
-              <div className="w-1 h-1 bg-red-600 animate-pulse [animation-delay:0.2s]"></div>
-              <div className="w-1 h-1 bg-red-600 animate-pulse [animation-delay:0.4s]"></div>
-            </div>
+      <div className="space-y-4">
+        {/* Row 1: Moving Left */}
+        <div className="marquee-container relative flex overflow-hidden">
+          <div className="flex w-max animate-marquee whitespace-nowrap py-4 group-hover:paused">
+            {/* Tripling items to ensure seamless loop on all screen sizes */}
+            {[...row1, ...row1, ...row1].map((skill, index) => (
+              <SkillBox key={`row1-${index}`} skill={skill} />
+            ))}
           </div>
-        ))}
+          {/* Fades for smooth edges */}
+          <div className="absolute inset-y-0 left-0 w-40 bg-linear-to-r from-black to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute inset-y-0 right-0 w-40 bg-linear-to-l from-black to-transparent z-10 pointer-events-none"></div>
+        </div>
+
+        {/* Row 2: Moving Right */}
+        <div className="marquee-container relative flex overflow-hidden">
+          <div className="flex w-max animate-marquee-reverse whitespace-nowrap py-4 group-hover:paused">
+            {[...row2, ...row2, ...row2].map((skill, index) => (
+              <SkillBox key={`row2-${index}`} skill={skill} />
+            ))}
+          </div>
+          {/* Fades for smooth edges */}
+          <div className="absolute inset-y-0 left-0 w-40 bg-linear-to-r from-black to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute inset-y-0 right-0 w-40 bg-linear-to-l from-black to-transparent z-10 pointer-events-none"></div>
+        </div>
+      </div>
+
+      {/* Footer Readout */}
+      <div className="mt-16 pt-8 border-t border-white/5 flex justify-between items-center opacity-40">
+        <span className="text-[8px] font-mono uppercase tracking-widest text-white">
+          System verified // auto-scrolling active
+        </span>
+        <div className="flex gap-1">
+          {[...Array(5)].map((_, i) => (
+            <div key={i} className="w-2 h-0.5 bg-red-600"></div>
+          ))}
+        </div>
       </div>
     </div>
   );
