@@ -16,14 +16,14 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto px-4">
+    <div className="container mx-auto px-4 md:px-8 lg:px-8">
       <div className="flex flex-col lg:flex-row gap-20">
         <div className="lg:w-1/3">
           <div className="text-red-500 font-mono text-xs mb-4 tracking-[0.4em] uppercase">
             // CONTACT
           </div>
           <h2 className="text-5xl font-black italic mb-8 text-white">
-            GET IN <br />
+            GET IN&nbsp;
             <span className="text-red-600 underline decoration-4 underline-offset-8">
               TOUCH
             </span>
@@ -31,14 +31,14 @@ const Contact: React.FC = () => {
           </h2>
 
           <div className="space-y-4 mt-12">
-            <div className="p-6 border border-white/10 bg-white/5 relative">
+            <div className="p-3 md:p-6 border border-white/10 bg-white/5 relative">
               <div className="absolute top-2 right-4 text-[8px] font-mono text-white/20">
                 EMAIL
               </div>
               <div className="text-red-500 text-[10px] uppercase font-black tracking-widest mb-2 flex items-center gap-2">
                 <Mail size={12} /> Contact Email
               </div>
-              <div className="text-white font-black italic text-lg">
+              <div className="text-white font-black italic text-xs md:text-sm">
                 <a
                   href="mailto:mangaroliyaumang21@gmail.com"
                   className="uppercase"
@@ -48,21 +48,21 @@ const Contact: React.FC = () => {
               </div>
             </div>
 
-            <div className="p-6 border border-white/10 bg-white/5 relative">
+            <div className="p-3 md:p-6 border border-white/10 bg-white/5 relative">
               <div className="absolute top-2 right-4 text-[8px] font-mono text-white/20">
                 LOCATION
               </div>
               <div className="text-red-500 text-[10px] uppercase font-black tracking-widest mb-2 flex items-center gap-2">
                 <MapPin size={12} /> Work Location
               </div>
-              <div className="text-white font-black italic text-lg">
+              <div className="text-white font-black italic text-xs md:text-sm">
                 OPEN TO REMOTE WORK
               </div>
             </div>
           </div>
         </div>
 
-        <div className="lg:w-2/3 bg-white/[0.02] border border-white/10 p-10 relative">
+        <div className="lg:w-2/3 bg-white/[0.02] border border-white/10 p-4 md:p-10 relative">
           <div className="absolute top-0 left-0 w-1 h-full bg-red-600"></div>
 
           <form onSubmit={handleSubmit} className="space-y-8">
@@ -117,7 +117,7 @@ const Contact: React.FC = () => {
 
             <button
               type="submit"
-              className="w-full py-5 bg-red-600 hover:bg-red-500 text-black font-black italic uppercase tracking-[0.3em] transition-all flex items-center justify-center gap-4 group"
+              className="w-full py-3 md:py-5 text-sm md:text-base bg-red-600 hover:bg-red-500 text-black font-black italic uppercase tracking-[0.3em] transition-all flex items-center justify-center gap-4 group"
             >
               Send Message
               <Satellite

@@ -34,7 +34,7 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4">
+    <div className="container mx-auto px-4 md:px-8 lg:px-8">
       <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
         <div className="relative">
           <div className="text-red-500 font-mono text-[10px] mb-4 tracking-[0.5em] uppercase animate-pulse">

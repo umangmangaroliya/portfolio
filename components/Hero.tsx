@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
   return (
     <div
       ref={containerRef}
-      className="relative min-h-screen flex flex-col justify-center bg-black px-8 md:px-16 py-32 md:py-40"
+      className="container mx-auto relative min-h-screen flex flex-col justify-center bg-black px-4 md:px-8 lg:px-8 py-32 md:py-40"
     >
       {/* Background Grid Pattern */}
       <div

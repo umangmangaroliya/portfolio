@@ -3,7 +3,7 @@ import React from "react";
 
 const About: React.FC = () => {
   return (
-    <div className="container mx-auto px-4">
+    <div className="container mx-auto px-4 md:px-8 lg:px-8">
       <div className="flex flex-col lg:flex-row items-center gap-16">
         <div className="relative group w-full lg:w-1/2 max-w-md">
           <div className="absolute -inset-2 bg-red-600/20 blur opacity-50 group-hover:opacity-100 transition duration-500"></div>
